@@ -8,4 +8,4 @@
 bin
 obj
 packages
-!/NuGet/Packages
+!*/nuget/packages
