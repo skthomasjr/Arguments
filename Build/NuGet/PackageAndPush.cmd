@@ -1,7 +1,7 @@
 @echo off
 echo Creating NuGet package
 set Name=CommandArguments
-set Version=1.0.0
+set Version=1.0.1
 
 echo.
 echo Cleaning convention based working directory...
@@ -39,7 +39,7 @@ xcopy ..\..\Source\%Name%.Net461\bin\Release\* Working\lib\net461\* /s /e /y
 
 echo.
 echo Packaging...
-..\..\Tools\NuGet\nuget.exe pack Working\%Name%.nuspec
+..\..\Tools\NuGet\nuget.exe pack Working\%Name%.nuspec -Version %Version%
 
 echo.
 echo Moving package...

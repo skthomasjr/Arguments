@@ -2,7 +2,7 @@
 
 namespace CommandArguments
 {
-    public static class ArgumentsFuentExtensions
+    public static class FluentExtensions
     {
         public static Argument AddArgument(this Arguments arguments, Action<string> action)
         {

@@ -11,7 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Argument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Arguments.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FuentExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FluentExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
   </ItemGroup>
 </Project>

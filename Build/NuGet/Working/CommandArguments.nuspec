@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CommandArguments</id>
-    <version>1.0.0</version>
+    <version>0.0.0</version>
     <authors>Scott Keith Thomas, Jr.</authors>
     <description>CommandArguments is a library for interacting with command-line arguments.</description>
     <tags>CommandArguments</tags>
