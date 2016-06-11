@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CommandArguments</id>
+    <version>1.0.0</version>
+    <authors>Scott Keith Thomas, Jr.</authors>
+    <description>CommandArguments is a library for interacting with command-line arguments.</description>
+    <tags>CommandArguments</tags>
+    <iconUrl>https://github.com/skthomasjr/CommandArguments/tree/master/Build/NuGet/Package/Icon.png</iconUrl>
+    <licenseUrl>https://github.com/skthomasjr/CommandArguments/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/skthomasjr/CommandArguments</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+</package>
