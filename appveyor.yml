@@ -7,7 +7,8 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 environment:
-  NuGetApiKey: 0db11efd-f306-4219-8b43-c314cd79385e
+  NuGetApiKey:
+    secure: /0Z5Cw06AdhoTRWdDCY6lEf6mL6m2WzkA1KgiJnjwFfpHVgfdDMdqVHQPpnI1K6O
 build:
   project: .\Source\CommandArguments.sln
   verbosity: minimal
