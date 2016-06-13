@@ -1,6 +1,6 @@
 @echo off
 echo Creating NuGet package
-set Name=CommandArguments
+set Name=%APPVEYOR_PROJECT_NAME%
 set Version=%APPVEYOR_BUILD_VERSION%
 
 echo.
