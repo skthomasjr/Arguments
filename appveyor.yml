@@ -6,6 +6,10 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
+environment:
+  NuGetApiKey: 0db11efd-f306-4219-8b43-c314cd79385e
 build:
   project: .\Source\CommandArguments.sln
   verbosity: minimal
+on_finish:
+- cmd: .\Build\NuGet\PackageAndPush.cmd
