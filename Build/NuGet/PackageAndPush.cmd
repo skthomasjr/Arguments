@@ -5,13 +5,6 @@ set Version=%APPVEYOR_BUILD_VERSION%
 cd /d %~dp0
 
 echo.
-echo Cleaning convention based working directory...
-rmdir Working\build /s /q
-rmdir Working\content /s /q
-rmdir Working\lib /s /q
-rmdir Working\tools /s /q
-
-echo.
 echo Creating convention based working directory...
 mkdir Working\build
 mkdir Working\content
@@ -43,9 +36,5 @@ echo Packaging...
 ..\..\Tools\NuGet\nuget.exe pack Working\%Name%.nuspec -Version %Version%
 
 echo.
-echo Moving package...
-move %Name%.%Version%.nupkg Packages
-
-echo.
 echo Pushing package...
-..\..\Tools\NuGet\nuget.exe push Packages\%Name%.%Version%.nupkg %NuGetApiKey% -Source https://www.nuget.org/api/v2/package
+..\..\Tools\NuGet\nuget.exe push %Name%.%Version%.nupkg %NuGetApiKey% -Source https://www.nuget.org/api/v2/package
