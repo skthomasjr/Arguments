@@ -12,23 +12,11 @@ mkdir Working\lib
 mkdir Working\tools
 
 echo.
-echo Copying lib for net35...
+echo Copying to lib...
 xcopy ..\..\Source\%Name%.Net35\bin\Release\* Working\lib\net35\* /s /e /y
-
-echo.
-echo Copying lib for net40...
 xcopy ..\..\Source\%Name%.Net40\bin\Release\* Working\lib\net40\* /s /e /y
-
-echo.
-echo Copying lib for net45...
 xcopy ..\..\Source\%Name%.Net45\bin\Release\* Working\lib\net45\* /s /e /y
-
-echo.
-echo Copying lib for net46...
 xcopy ..\..\Source\%Name%.Net46\bin\Release\* Working\lib\net46\* /s /e /y
-
-echo.
-echo Copying lib for net461...
 xcopy ..\..\Source\%Name%.Net461\bin\Release\* Working\lib\net461\* /s /e /y
 
 echo.
