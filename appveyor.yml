@@ -14,10 +14,10 @@ build:
   project: .\Source\$(APPVEYOR_PROJECT_NAME).sln
   verbosity: normal
 after_build:
-- cmd: .\Build\NuGet\PackageAndPush.cmd
+- cmd: .\Build\NuGet\Package.cmd
 - appveyor PushArtifact %NuGetPackageId%.%APPVEYOR_BUILD_VERSION%.nupkg
 deploy:
-  provider: NuGet
+  provider: NuGet.org
   api_key:
     secure: /0Z5Cw06AdhoTRWdDCY6lEf6mL6m2WzkA1KgiJnjwFfpHVgfdDMdqVHQPpnI1K6O
   skip_symbols: false

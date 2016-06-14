@@ -22,7 +22,3 @@ xcopy ..\..\Source\%Name%.Net461\bin\Release\* Working\lib\net461\* /s /e /y
 echo.
 echo Packaging...
 ..\..\Tools\NuGet\nuget.exe pack Working\%NuGetPackageId%.nuspec -Version %Version%
-
-rem echo.
-rem echo Pushing package...
-rem ..\..\Tools\NuGet\nuget.exe push %NuGetPackageId%.%Version%.nupkg %NuGetApiKey% -Source https://www.nuget.org/api/v2/package
