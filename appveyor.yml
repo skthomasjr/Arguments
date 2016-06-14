@@ -12,6 +12,6 @@ environment:
   NuGetPackageId: $(APPVEYOR_PROJECT_NAME)
 build:
   project: .\Source\$(APPVEYOR_PROJECT_NAME).sln
-  verbosity: minimal
+  verbosity: normal
 on_finish:
 - cmd: .\Build\NuGet\PackageAndPush.cmd
