@@ -10,6 +10,9 @@ environment:
   NuGetApiKey:
     secure: /0Z5Cw06AdhoTRWdDCY6lEf6mL6m2WzkA1KgiJnjwFfpHVgfdDMdqVHQPpnI1K6O
   NuGetPackageId: $(APPVEYOR_PROJECT_NAME)
+artifacts:
+- path: Source\CommandArguments.Net461\bin\Release\*
+  name: NuGet.org
 build:
   project: .\Source\$(APPVEYOR_PROJECT_NAME).sln
   verbosity: normal
