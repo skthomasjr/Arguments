@@ -7,8 +7,6 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 environment:
-  NuGetApiKey:
-    secure: /0Z5Cw06AdhoTRWdDCY6lEf6mL6m2WzkA1KgiJnjwFfpHVgfdDMdqVHQPpnI1K6O
   NuGetPackageId: $(APPVEYOR_PROJECT_NAME)
 build:
   project: .\Source\$(APPVEYOR_PROJECT_NAME).sln
