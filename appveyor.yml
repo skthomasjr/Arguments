@@ -15,6 +15,7 @@ build:
   verbosity: normal
 after_build:
 - cmd: .\Build\NuGet\PackageAndPush.cmd
+- appveyor PushArtifact %NuGetPackageId%.%APPVEYOR_BUILD_VERSION%.nupkg
 artifacts:
 - path: /.*\.nupkg/
   name: NuGet
