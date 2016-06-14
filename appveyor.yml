@@ -15,3 +15,7 @@ build:
   verbosity: normal
 on_finish:
 - cmd: .\Build\NuGet\PackageAndPush.cmd
+deploy:
+  provider: NuGet
+  skip_symbols: false
+  artifact: /.*\.nupkg/
