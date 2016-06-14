@@ -6,7 +6,7 @@
     <authors>Scott Keith Thomas, Jr.</authors>
     <description>CommandArguments is a library for interacting with command-line arguments.</description>
     <tags>CommandArguments</tags>
-    <iconUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/Build/NuGet/Working/Icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/Build/NuGet/Icon.png</iconUrl>
     <licenseUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/skthomasjr/CommandArguments</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
