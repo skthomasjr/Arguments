@@ -14,4 +14,4 @@ xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net45\bin\Release\* Working\lib\net45
 xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net46\bin\Release\* Working\lib\net46\* /s /e /y
 xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net461\bin\Release\* Working\lib\net461\* /s /e /y
 
-..\..\Tools\NuGet\nuget.exe pack Working\%NUGET_PACKAGE_ID%.nuspec -Version %APPVEYOR_BUILD_VERSION%
+nuget.exe pack Working\%NUGET_PACKAGE_ID%.nuspec -Version %APPVEYOR_BUILD_VERSION%
