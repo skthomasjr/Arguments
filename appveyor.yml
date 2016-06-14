@@ -8,6 +8,8 @@ assembly_info:
   assembly_informational_version: '{version}'
 environment:
   nuget_package_id: $(APPVEYOR_PROJECT_NAME)
+before_build:
+- cmd: appveyor-retry nuget restore Source\%APPVEYOR_PROJECT_NAME%.sln
 build:
   project: .\Source\$(APPVEYOR_PROJECT_NAME).sln
   verbosity: normal
