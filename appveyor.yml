@@ -17,5 +17,7 @@ after_build:
 - cmd: .\Build\NuGet\PackageAndPush.cmd
 deploy:
   provider: NuGet
+  api_key:
+    secure: /0Z5Cw06AdhoTRWdDCY6lEf6mL6m2WzkA1KgiJnjwFfpHVgfdDMdqVHQPpnI1K6O
   skip_symbols: false
   artifact: /.*\.nupkg/
