@@ -9,7 +9,7 @@ mkdir Working\content
 mkdir Working\lib
 mkdir Working\tools
 
-xcopy Package.nuspec Working\%NUGET_PACKAGE_ID%.nuspec /s /e /y
+copy Package.nuspec Working\%NUGET_PACKAGE_ID%.nuspec
 xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net35\bin\Release\* Working\lib\net35\* /s /e /y
 xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net40\bin\Release\* Working\lib\net40\* /s /e /y
 xcopy ..\..\Source\%APPVEYOR_PROJECT_NAME%.Net45\bin\Release\* Working\lib\net45\* /s /e /y
