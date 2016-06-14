@@ -15,6 +15,9 @@ build:
   verbosity: normal
 after_build:
 - cmd: .\Build\NuGet\PackageAndPush.cmd
+artifacts:
+- path: /.*\.nupkg/
+  name: NuGet
 deploy:
   provider: NuGet
   api_key:
