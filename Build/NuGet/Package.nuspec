@@ -5,7 +5,7 @@
     <version>0.0.0</version>
     <authors>Scott Keith Thomas, Jr.</authors>
     <description>CommandArguments is a library for interacting with command-line arguments.</description>
-    <tags>CommandArguments</tags>
+    <tags>arguments batch cmd command-line commandline switch switches</tags>
     <iconUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/Build/NuGet/Package.png</iconUrl>
     <licenseUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/skthomasjr/CommandArguments</projectUrl>
