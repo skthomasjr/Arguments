@@ -7,9 +7,21 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CommandArguments", "Command
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net461", "CommandArguments.Net461\CommandArguments.Net461.csproj", "{ABAFD8A1-0581-4961-8FFC-FA85B6BA557E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net46", "CommandArguments.Net46\CommandArguments.Net46.csproj", "{10651E1B-9EC9-4792-8355-17FB6AED2D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net45", "CommandArguments.Net45\CommandArguments.Net45.csproj", "{5CB30A07-14DC-45BD-B18E-44BC4D7423CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net40", "CommandArguments.Net40\CommandArguments.Net40.csproj", "{016836C6-EE59-4015-9B52-CB52038878D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net35", "CommandArguments.Net35\CommandArguments.Net35.csproj", "{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CommandArguments\CommandArguments.projitems*{10651e1b-9ec9-4792-8355-17fb6aed2d82}*SharedItemsImports = 4
 		CommandArguments\CommandArguments.projitems*{999cf341-07b9-4cd2-b412-00f54ddd1b04}*SharedItemsImports = 13
+		CommandArguments\CommandArguments.projitems*{5cb30a07-14dc-45bd-b18e-44bc4d7423cf}*SharedItemsImports = 4
+		CommandArguments\CommandArguments.projitems*{016836c6-ee59-4015-9b52-cb52038878d3}*SharedItemsImports = 4
+		CommandArguments\CommandArguments.projitems*{58a16a92-7b0b-4c5c-9fd0-1be894ec8f49}*SharedItemsImports = 4
 		CommandArguments\CommandArguments.projitems*{abafd8a1-0581-4961-8ffc-fa85b6ba557e}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +33,22 @@ Global
 		{ABAFD8A1-0581-4961-8FFC-FA85B6BA557E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAFD8A1-0581-4961-8FFC-FA85B6BA557E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAFD8A1-0581-4961-8FFC-FA85B6BA557E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10651E1B-9EC9-4792-8355-17FB6AED2D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10651E1B-9EC9-4792-8355-17FB6AED2D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10651E1B-9EC9-4792-8355-17FB6AED2D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10651E1B-9EC9-4792-8355-17FB6AED2D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB30A07-14DC-45BD-B18E-44BC4D7423CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB30A07-14DC-45BD-B18E-44BC4D7423CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB30A07-14DC-45BD-B18E-44BC4D7423CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB30A07-14DC-45BD-B18E-44BC4D7423CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{016836C6-EE59-4015-9B52-CB52038878D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016836C6-EE59-4015-9B52-CB52038878D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016836C6-EE59-4015-9B52-CB52038878D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016836C6-EE59-4015-9B52-CB52038878D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,19 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace CommandArguments
 {
+    /// <summary>
+    /// All the arguments.
+    /// </summary>
     public class Arguments : List<Argument>
     {
+        /// <summary>
+        /// The source arguments.
+        /// </summary>
         public string[] Source { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int Executions { get; private set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string[] ArgumentSeparators { get; set; }
 
-        public char ParameterSeparator { get; set; }
+        /// <summary>
+        /// The character that seperates the flag from the parameter.
+        /// </summary>
+        public char ParameterSeparator { get; set; } = ':';
 
+        /// <summary>
+        /// Executes the action on each of the arguments encountered.
+        /// </summary>
+        /// <returns></returns>
         public Arguments Process()
         {
             foreach (var sourceArgument in Source)
