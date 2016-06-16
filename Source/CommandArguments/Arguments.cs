@@ -6,16 +6,16 @@ namespace CommandArguments
     /// <summary>
     /// All the arguments.
     /// </summary>
-    public class Arguments : List<Argument>
+    public class Arguments : List<IArgument>
     {
-        private readonly IEnumerable<Argument> arguments;
+        private readonly IEnumerable<IArgument> arguments;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Arguments" /> class.
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <param name="arguments">Arguments to process.</param>
-        public Arguments(string[] source, IEnumerable<Argument> arguments) : this()
+        public Arguments(string[] source, IEnumerable<IArgument> arguments) : this()
         {
             Source = source;
             this.arguments = arguments;
@@ -28,15 +28,6 @@ namespace CommandArguments
         public Arguments(string[] source) : this()
         {
             Source = source;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the<see cref="Arguments" /> class.
-        /// </summary>
-        /// <param name="arguments">Arguments to process.</param>
-        public Arguments(IEnumerable<Argument> arguments) : this()
-        {
-            this.arguments = arguments;
         }
 
         /// <summary>
@@ -67,6 +58,8 @@ namespace CommandArguments
         /// <returns></returns>
         public Arguments Process()
         {
+            AddRange(arguments);
+
             foreach (var sourceArgument in Source)
             {
                 var command = sourceArgument.Trim().TrimStart('/', '-');
@@ -83,13 +76,24 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// Return a new instance of the <see cref="Arguments" /> class with the specified source arguments.
+        /// Initializes a new instance of the <see cref="Arguments" /> class with the specified source arguments.
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <returns>The arguments with the specified source arguments.</returns>
-        public static Arguments WithSource(string[] source)
+        public static Arguments NewArguments(string[] source)
         {
             return new Arguments(source);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="Arguments" /> class with the specified source arguments and injected arguments.
+        /// </summary>
+        /// <param name="source">The source arguments.</param>
+        /// <param name="arguments">Arguments to inject.</param>
+        /// <returns>The arguments with the specified source arguments and injected arguments.</returns>
+        public static Arguments NewArguments(string[] source, IEnumerable<IArgument> arguments)
+        {
+            return new Arguments(source, arguments);
         }
     }
 }

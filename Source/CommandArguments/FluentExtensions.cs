@@ -3,14 +3,14 @@
 namespace CommandArguments
 {
     /// <summary>
-    /// 
+    /// Extension methods to support fluent interaction of arguments.
     /// </summary>
     public static class FluentExtensions
     {
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
         /// <param name="action"></param>
         /// <returns></returns>
         public static Argument AddArgument(this Arguments arguments, Action<string> action)
@@ -22,9 +22,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
         /// <param name="flags"></param>
         /// <returns></returns>
         public static Argument AddArgument(this Arguments arguments, params string[] flags)
@@ -36,9 +36,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="arguments"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
         /// <returns></returns>
         public static Argument AddArgument(this Arguments arguments)
         {
@@ -48,9 +48,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
         /// <param name="action"></param>
         /// <returns></returns>
         public static Argument AddArgument(this Argument argument, Action<string> action)
@@ -59,9 +59,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
         /// <param name="flags"></param>
         /// <returns></returns>
         public static Argument AddArgument(this Argument argument, params string[] flags)
@@ -70,9 +70,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Adds an <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
         /// <returns></returns>
         public static Argument AddArgument(this Argument argument)
         {
@@ -80,9 +80,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Process the <see cref="Arguments" />.
         /// </summary>
-        /// <param name="argument"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
         /// <returns></returns>
         public static Arguments Process(this Argument argument)
         {
@@ -90,9 +90,9 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Terminates after executing the current <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
         /// <returns></returns>
         public static Argument TerminateAfterExecution(this Argument argument)
         {
@@ -101,10 +101,10 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Uses the argument separators with the current <see cref="Arguments" />.
         /// </summary>
-        /// <param name="arguments"></param>
-        /// <param name="separators"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
+        /// <param name="separators">The argument separators.</param>
         /// <returns></returns>
         public static Arguments UsingArgumentSeparators(this Arguments arguments, params string[] separators)
         {
@@ -113,10 +113,10 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Uses the parameter separator with the current <see cref="Arguments" />.
         /// </summary>
-        /// <param name="arguments"></param>
-        /// <param name="separator"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
+        /// <param name="separator">The searator character.</param>
         /// <returns></returns>
         public static Arguments UsingParameterSeparator(this Arguments arguments, char separator)
         {
@@ -125,22 +125,22 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Uses the source parameters with the current <see cref="Arguments" />.
         /// </summary>
-        /// <param name="arguments"></param>
-        /// <param name="source"></param>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
+        /// <param name="source">The source arguments.</param>
         /// <returns></returns>
-        public static Arguments WithArguments(this Arguments arguments, params string[] source)
+        public static Arguments UsingSource(this Arguments arguments, params string[] source)
         {
             arguments.Source = source;
             return arguments;
         }
 
         /// <summary>
-        /// 
+        /// Sets the action of the current <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
-        /// <param name="action"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
+        /// <param name="action">The action to execute.</param>
         /// <returns></returns>
         public static Argument WithAction(this Argument argument, Action<string> action)
         {
@@ -149,10 +149,10 @@ namespace CommandArguments
         }
 
         /// <summary>
-        /// 
+        /// Sets the flags of the current <see cref="Argument" />.
         /// </summary>
-        /// <param name="argument"></param>
-        /// <param name="flags"></param>
+        /// <param name="argument">The <see cref="Argument" /></param>
+        /// <param name="flags">The flags.</param>
         /// <returns></returns>
         public static Argument WithFlags(this Argument argument, params string[] flags)
         {
