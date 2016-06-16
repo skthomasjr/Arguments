@@ -12,12 +12,18 @@ namespace CommandArguments
         /// <summary>
         /// The action to perform when the argument is specified.
         /// </summary>
-        Action<string> Action { get; set; }
+        Action<object, string> Action { get; set; }
 
         /// <summary>
         /// The possible flags used to denote the argument.
         /// </summary>
         string[] Flags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the argument action target.
+        /// </summary>
+        /// <value>The target.</value>
+        object Target { get; set; }
 
         /// <summary>
         /// Determines if additional arguments should be processed if this argument is encountered and executed.

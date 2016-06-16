@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace CommandArguments
 {
@@ -34,9 +35,7 @@ namespace CommandArguments
         /// <summary>
         /// Initializes a new instance of the<see cref="Arguments" /> class.
         /// </summary>
-        public Arguments()
-        {
-        }
+        public Arguments() { }
 
         /// <summary>
         /// The source arguments.
@@ -49,7 +48,7 @@ namespace CommandArguments
         public string[] ArgumentSeparators { get; set; } = {"-", "--", "/", "//"};
 
         /// <summary>
-        /// The character that seperates the flag from the parameter.
+        /// The character that separates the flag from the parameter.
         /// </summary>
         public char ParameterSeparator { get; set; } = ':';
 
@@ -69,22 +68,12 @@ namespace CommandArguments
                 var argument = this.FirstOrDefault(f => f.Flags.Contains(flag));
                 if (argument != null)
                 {
-                    argument.Action.Invoke(parameter);
+                    argument.Action.Invoke(argument.Target, parameter);
                     processedArguments.Add(argument);
                     if (argument.TerminateAfterExecution) break;
                 }
             }
             return processedArguments;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Arguments" /> class with the specified source arguments.
-        /// </summary>
-        /// <param name="source">The source arguments.</param>
-        /// <returns>The arguments with the specified source arguments.</returns>
-        public static Arguments NewArguments(string[] source)
-        {
-            return new Arguments(source);
         }
 
         /// <summary>
@@ -96,6 +85,16 @@ namespace CommandArguments
         public static Arguments NewArguments(string[] source, IEnumerable<IArgument> arguments)
         {
             return new Arguments(source, arguments);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Arguments" /> class with the specified source arguments.
+        /// </summary>
+        /// <param name="source">The source arguments.</param>
+        /// <returns>The arguments with the specified source arguments.</returns>
+        public static Arguments NewArguments(string[] source)
+        {
+            return new Arguments(source);
         }
     }
 }

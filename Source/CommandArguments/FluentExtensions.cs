@@ -11,13 +11,31 @@ namespace CommandArguments
         /// <summary>
         /// Adds an <see cref="Argument" />.
         /// </summary>
+        /// <typeparam name="TTarget">The type of the argument action target.</typeparam>
         /// <param name="arguments">The <see cref="Arguments" /></param>
-        /// <param name="action"></param>
-        /// <returns></returns>
+        /// <param name="action">The action.</param>
+        /// <param name="target">The target.</param>
+        /// <returns>Argument.</returns>
+        public static Argument AddArgument<TTarget>(this Arguments arguments, Action<TTarget, string> action, TTarget target)
+        {
+            var argument = new Argument(arguments)
+            {
+                Action = (t, p) => action(target, p),
+                Target = target
+            };
+            arguments.Add(argument);
+            return argument;
+        }
+
+        /// <summary>
+        /// Adds an <see cref="Argument" />.
+        /// </summary>
+        /// <param name="arguments">The <see cref="Arguments" /></param>
+        /// <param name="action">The action.</param>
+        /// <returns>Argument.</returns>
         public static Argument AddArgument(this Arguments arguments, Action<string> action)
         {
-            var argument = new Argument(arguments);
-            argument.Action = action;
+            var argument = new Argument(arguments) { Action = (t, p) => action(p) };
             arguments.Add(argument);
             return argument;
         }
@@ -30,8 +48,7 @@ namespace CommandArguments
         /// <returns></returns>
         public static Argument AddArgument(this Arguments arguments, params string[] flags)
         {
-            var argument = new Argument(arguments);
-            argument.Flags = flags;
+            var argument = new Argument(arguments) { Flags = flags };
             arguments.Add(argument);
             return argument;
         }
@@ -48,16 +65,16 @@ namespace CommandArguments
             return argument;
         }
 
-        /// <summary>
-        /// Adds an <see cref="Argument" />.
-        /// </summary>
-        /// <param name="argument">The <see cref="Argument" /></param>
-        /// <param name="action"></param>
-        /// <returns></returns>
-        public static Argument AddArgument(this Argument argument, Action<string> action)
-        {
-            return argument.Arguments.AddArgument(action);
-        }
+        ///// <summary>
+        ///// Adds an <see cref="Argument" />.
+        ///// </summary>
+        ///// <param name="argument">The <see cref="Argument" /></param>
+        ///// <param name="action"></param>
+        ///// <returns></returns>
+        //public static Argument AddArgument(this Argument argument, Action<string> action)
+        //{
+        //    return argument.Arguments.AddArgument(action);
+        //}
 
         /// <summary>
         /// Adds an <see cref="Argument" />.
@@ -117,7 +134,7 @@ namespace CommandArguments
         /// Uses the parameter separator with the current <see cref="Arguments" />.
         /// </summary>
         /// <param name="arguments">The <see cref="Arguments" /></param>
-        /// <param name="separator">The searator character.</param>
+        /// <param name="separator">The separator character.</param>
         /// <returns></returns>
         public static Arguments UsingParameterSeparator(this Arguments arguments, char separator)
         {
@@ -140,12 +157,27 @@ namespace CommandArguments
         /// <summary>
         /// Sets the action of the current <see cref="Argument" />.
         /// </summary>
+        /// <typeparam name="TTarget">The type of the argument action target.</typeparam>
         /// <param name="argument">The <see cref="Argument" /></param>
         /// <param name="action">The action to execute.</param>
-        /// <returns></returns>
+        /// <param name="target">The target.</param>
+        /// <returns>Argument.</returns>
+        public static Argument WithAction<TTarget>(this Argument argument, Action<TTarget, string> action, TTarget target)
+        {
+            argument.Action = (t, p) => action(target, p);
+            argument.Target = target;
+            return argument;
+        }
+
+        /// <summary>
+        /// Sets the action of the current <see cref="Argument" />.
+        /// </summary>
+        /// <param name="argument">The <see cref="Argument" /></param>
+        /// <param name="action">The action to execute.</param>
+        /// <returns>Argument.</returns>
         public static Argument WithAction(this Argument argument, Action<string> action)
         {
-            argument.Action = action;
+            argument.Action = (t, p) => action(p);
             return argument;
         }
 

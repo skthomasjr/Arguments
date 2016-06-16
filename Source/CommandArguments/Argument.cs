@@ -19,7 +19,7 @@ namespace CommandArguments
         /// <summary>
         /// The action to perform when the argument is specified.
         /// </summary>
-        public Action<string> Action { get; set; }
+        public Action<object, string> Action { get; set; }
 
         /// <summary>
         /// The set of arguments from which the argument originated.
@@ -30,6 +30,12 @@ namespace CommandArguments
         /// The possible flags used to denote the argument.
         /// </summary>
         public string[] Flags { get; set; }
+
+        /// <summary>
+        /// Gets or sets the argument action target.
+        /// </summary>
+        /// <value>The target.</value>
+        public object Target { get; set; }
 
         /// <summary>
         /// Determines if additional arguments should be processed if this argument is encountered and executed.
