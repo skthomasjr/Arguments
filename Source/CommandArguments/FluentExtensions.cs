@@ -15,7 +15,34 @@ namespace CommandArguments
         /// <returns></returns>
         public static Argument AddArgument(this Arguments arguments, Action<string> action)
         {
-            var argument = new Argument(arguments, action);
+            var argument = new Argument(arguments);
+            argument.Action = action;
+            arguments.Add(argument);
+            return argument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        public static Argument AddArgument(this Arguments arguments, params string[] flags)
+        {
+            var argument = new Argument(arguments);
+            argument.Flags = flags;
+            arguments.Add(argument);
+            return argument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <returns></returns>
+        public static Argument AddArgument(this Arguments arguments)
+        {
+            var argument = new Argument(arguments);
             arguments.Add(argument);
             return argument;
         }
@@ -35,11 +62,21 @@ namespace CommandArguments
         /// 
         /// </summary>
         /// <param name="argument"></param>
+        /// <param name="flags"></param>
         /// <returns></returns>
-        public static Argument ContinueAfterExecution(this Argument argument)
+        public static Argument AddArgument(this Argument argument, params string[] flags)
         {
-            argument.ContinueAfterExecution = true;
-            return argument;
+            return argument.Arguments.AddArgument(flags);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <returns></returns>
+        public static Argument AddArgument(this Argument argument)
+        {
+            return argument.Arguments.AddArgument();
         }
 
         /// <summary>
@@ -50,6 +87,17 @@ namespace CommandArguments
         public static Arguments Process(this Argument argument)
         {
             return argument.Arguments.Process();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <returns></returns>
+        public static Argument TerminateAfterExecution(this Argument argument)
+        {
+            argument.TerminateAfterExecution = true;
+            return argument;
         }
 
         /// <summary>
@@ -86,6 +134,18 @@ namespace CommandArguments
         {
             arguments.Source = source;
             return arguments;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <param name="action"></param>
+        /// <returns></returns>
+        public static Argument WithAction(this Argument argument, Action<string> action)
+        {
+            argument.Action = action;
+            return argument;
         }
 
         /// <summary>

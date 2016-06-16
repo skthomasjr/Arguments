@@ -8,20 +8,53 @@ namespace CommandArguments
     /// </summary>
     public class Arguments : List<Argument>
     {
+        private readonly IEnumerable<Argument> arguments;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Arguments" /> class.
+        /// </summary>
+        /// <param name="source">The source arguments.</param>
+        /// <param name="arguments">Arguments to process.</param>
+        public Arguments(string[] source, IEnumerable<Argument> arguments) : this()
+        {
+            Source = source;
+            this.arguments = arguments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the<see cref="Arguments" /> class.
+        /// </summary>
+        /// <param name="source">The source arguments.</param>
+        public Arguments(string[] source) : this()
+        {
+            Source = source;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the<see cref="Arguments" /> class.
+        /// </summary>
+        /// <param name="arguments">Arguments to process.</param>
+        public Arguments(IEnumerable<Argument> arguments) : this()
+        {
+            this.arguments = arguments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the<see cref="Arguments" /> class.
+        /// </summary>
+        public Arguments()
+        {
+        }
+
         /// <summary>
         /// The source arguments.
         /// </summary>
         public string[] Source { get; set; }
 
         /// <summary>
-        /// 
+        /// The strings separating the arguments.
         /// </summary>
-        public int Executions { get; private set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string[] ArgumentSeparators { get; set; }
+        public string[] ArgumentSeparators { get; set; } = {"-", "--", "/", "//"};
 
         /// <summary>
         /// The character that seperates the flag from the parameter.
@@ -42,12 +75,21 @@ namespace CommandArguments
                 var argument = this.FirstOrDefault(f => f.Flags.Contains(flag));
                 if (argument != null)
                 {
-                    argument.Action.Invoke((string)parameter);
-                    Executions++;
-                    if (!argument.ContinueAfterExecution) break;
+                    argument.Action.Invoke(parameter);
+                    if (argument.TerminateAfterExecution) break;
                 }
             }
             return this;
+        }
+
+        /// <summary>
+        /// Return a new instance of the <see cref="Arguments" /> class with the specified source arguments.
+        /// </summary>
+        /// <param name="source">The source arguments.</param>
+        /// <returns>The arguments with the specified source arguments.</returns>
+        public static Arguments WithSource(string[] source)
+        {
+            return new Arguments(source);
         }
     }
 }

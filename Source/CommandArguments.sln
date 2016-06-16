@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net45", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net40", "CommandArguments.Net40\CommandArguments.Net40.csproj", "{016836C6-EE59-4015-9B52-CB52038878D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.Net35", "CommandArguments.Net35\CommandArguments.Net35.csproj", "{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArguments.SampleConsole", "CommandArguments.SampleConsole\CommandArguments.SampleConsole.csproj", "{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -21,7 +21,6 @@ Global
 		CommandArguments\CommandArguments.projitems*{999cf341-07b9-4cd2-b412-00f54ddd1b04}*SharedItemsImports = 13
 		CommandArguments\CommandArguments.projitems*{5cb30a07-14dc-45bd-b18e-44bc4d7423cf}*SharedItemsImports = 4
 		CommandArguments\CommandArguments.projitems*{016836c6-ee59-4015-9b52-cb52038878d3}*SharedItemsImports = 4
-		CommandArguments\CommandArguments.projitems*{58a16a92-7b0b-4c5c-9fd0-1be894ec8f49}*SharedItemsImports = 4
 		CommandArguments\CommandArguments.projitems*{abafd8a1-0581-4961-8ffc-fa85b6ba557e}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +44,10 @@ Global
 		{016836C6-EE59-4015-9B52-CB52038878D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{016836C6-EE59-4015-9B52-CB52038878D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{016836C6-EE59-4015-9B52-CB52038878D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58A16A92-7B0B-4C5C-9FD0-1BE894EC8F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
