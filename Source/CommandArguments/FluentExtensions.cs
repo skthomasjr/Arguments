@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CommandArguments
 {
@@ -84,7 +85,7 @@ namespace CommandArguments
         /// </summary>
         /// <param name="argument">The <see cref="Argument" /></param>
         /// <returns></returns>
-        public static Arguments Process(this Argument argument)
+        public static IEnumerable<IArgument> Process(this Argument argument)
         {
             return argument.Arguments.Process();
         }

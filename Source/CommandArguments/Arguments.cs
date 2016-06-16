@@ -9,6 +9,7 @@ namespace CommandArguments
     public class Arguments : List<IArgument>
     {
         private readonly IEnumerable<IArgument> arguments;
+        private readonly ICollection<IArgument> processedArguments = new List<IArgument>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Arguments" /> class.
@@ -55,8 +56,8 @@ namespace CommandArguments
         /// <summary>
         /// Executes the action on each of the arguments encountered.
         /// </summary>
-        /// <returns></returns>
-        public Arguments Process()
+        /// <returns>The processed arguments.</returns>
+        public IEnumerable<IArgument> Process()
         {
             AddRange(arguments);
 
@@ -69,10 +70,11 @@ namespace CommandArguments
                 if (argument != null)
                 {
                     argument.Action.Invoke(parameter);
+                    processedArguments.Add(argument);
                     if (argument.TerminateAfterExecution) break;
                 }
             }
-            return this;
+            return processedArguments;
         }
 
         /// <summary>

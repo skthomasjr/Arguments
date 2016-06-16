@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
+using System.Linq;
 using System.Reflection;
 
 namespace CommandArguments.SampleConsole
 {
     internal class Program
     {
-        internal static void Main(string[] args)
+        internal static int Main(string[] args)
         {
             // Parameters: /a:"some value" //d --stop -w --y
 
@@ -21,7 +22,7 @@ namespace CommandArguments.SampleConsole
                     arguments = container.GetExportedValues<IArgument>();
 
             // Typical usage.
-            Arguments.NewArguments(args, arguments)
+            var processedArguments = Arguments.NewArguments(args, arguments)
                 .AddArgument("a")
                     .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
                 .AddArgument("d")
@@ -32,9 +33,17 @@ namespace CommandArguments.SampleConsole
                     .WithAction(parameter => { Console.WriteLine("Argument 'w' processed"); })
                 .Process();
 
+            // We may want to return if any command-line parameters have been processed.
+            if (processedArguments.Any())
+            {
+                //return 1;
+            }
+
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
+
+            return 1;
         }
     }
 }
