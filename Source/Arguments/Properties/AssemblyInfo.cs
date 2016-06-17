@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CommandArguments")]
-[assembly: AssemblyDescription("CommandArguments is a library for interacting with command-line arguments.")]
+[assembly: AssemblyTitle("Arguments.NET")]
+[assembly: AssemblyDescription("Arguments.NET is a library for interacting with command-line arguments.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Scott Keith Thomas, Jr.")]
-[assembly: AssemblyProduct("CommandArguments")]
+[assembly: AssemblyProduct("Arguments.NET")]
 [assembly: AssemblyCopyright("Copyright © 2016 Scott Keith Thomas, Jr.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

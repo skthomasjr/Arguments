@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 
-namespace CommandArguments
+namespace Arguments
 {
     /// <summary>
     /// Interface for an individual argument.

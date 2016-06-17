@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CommandArguments.SampleConsole
+namespace Arguments.SampleConsole
 {
     public class SampleInjectedArgument : IArgument
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Reflection;
 
-namespace CommandArguments.SampleConsole
+namespace Arguments.SampleConsole
 {
     internal class Program
     {

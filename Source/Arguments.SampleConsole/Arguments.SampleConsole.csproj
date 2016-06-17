@@ -7,8 +7,8 @@
     <ProjectGuid>{CEDE3194-E7E5-4B97-94E0-3D6B8D9177B7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommandArguments.SampleConsole</RootNamespace>
-    <AssemblyName>CommandArguments.SampleConsole</AssemblyName>
+    <RootNamespace>Arguments.SampleConsole</RootNamespace>
+    <AssemblyName>Arguments.SampleConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,9 +47,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommandArguments.Net461\CommandArguments.Net461.csproj">
+    <ProjectReference Include="..\Arguments.Net461\Arguments.Net461.csproj">
       <Project>{abafd8a1-0581-4961-8ffc-fa85b6ba557e}</Project>
-      <Name>CommandArguments.Net461</Name>
+      <Name>Arguments.Net461</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

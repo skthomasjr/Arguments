@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CommandArguments
+namespace Arguments
 {
     /// <summary>
     /// Extension methods to support fluent interaction of arguments.

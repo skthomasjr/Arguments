@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CommandArguments
+namespace Arguments
 {
     /// <summary>
     /// An individual argument.

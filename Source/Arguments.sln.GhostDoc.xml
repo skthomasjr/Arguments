@@ -15,7 +15,7 @@
   <HelpConfiguration name="HelpFile">
     <OutputPath>.\Help</OutputPath>
     <CleanupOutputPath>true</CleanupOutputPath>
-    <HelpFileName>CommandArguments</HelpFileName>
+    <HelpFileName>Arguments</HelpFileName>
     <ImageFolderPath />
     <Theme />
     <HtmlFormats>
