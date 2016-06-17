@@ -7,7 +7,7 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 environment:
-  nuget_package_id: $(APPVEYOR_PROJECT_NAME)
+  nuget_package_id: $(APPVEYOR_PROJECT_NAME).NET
 before_build:
 - cmd: appveyor-retry nuget restore Source\%APPVEYOR_PROJECT_NAME%.sln
 build:
