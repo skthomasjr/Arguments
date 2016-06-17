@@ -5,37 +5,43 @@ using System.Reflection;
 namespace Arguments
 {
     /// <summary>
-    /// All the arguments.
+    /// Processes the arguments.
     /// </summary>
-    public class Arguments : List<IArgument>
+    public class ArgumentProcessor
     {
         private readonly IEnumerable<IArgument> arguments;
         private readonly ICollection<IArgument> processedArguments = new List<IArgument>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Arguments" /> class.
+        /// Initializes a new instance of the <see cref="ArgumentProcessor" /> class.
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <param name="arguments">Arguments to process.</param>
-        public Arguments(string[] source, IEnumerable<IArgument> arguments) : this()
+        public ArgumentProcessor(string[] source, IEnumerable<IArgument> arguments) : this()
         {
             Source = source;
             this.arguments = arguments;
         }
 
         /// <summary>
-        /// Initializes a new instance of the<see cref="Arguments" /> class.
+        /// Initializes a new instance of the<see cref="ArgumentProcessor" /> class.
         /// </summary>
         /// <param name="source">The source arguments.</param>
-        public Arguments(string[] source) : this()
+        public ArgumentProcessor(string[] source) : this()
         {
             Source = source;
         }
 
         /// <summary>
-        /// Initializes a new instance of the<see cref="Arguments" /> class.
+        /// Initializes a new instance of the<see cref="ArgumentProcessor" /> class.
         /// </summary>
-        public Arguments() { }
+        public ArgumentProcessor() { }
+
+        /// <summary>
+        /// Gets the arguments.
+        /// </summary>
+        /// <value>The arguments.</value>
+        public List<IArgument> Arguments { get; } = new List<IArgument>();
 
         /// <summary>
         /// The source arguments.
@@ -58,14 +64,14 @@ namespace Arguments
         /// <returns>The processed arguments.</returns>
         public IEnumerable<IArgument> Process()
         {
-            AddRange(arguments);
+            Arguments.AddRange(arguments);
 
             foreach (var sourceArgument in Source)
             {
                 var command = sourceArgument.Trim().TrimStart('/', '-');
                 var flag = command.Split(ParameterSeparator)[0];
                 var parameter = command.Split(ParameterSeparator).Length > 1 ? command.Split(ParameterSeparator)[1] : string.Empty;
-                var argument = this.FirstOrDefault(f => f.Flags.Contains(flag));
+                var argument = Arguments.FirstOrDefault(f => f.Flags.Contains(flag));
                 if (argument != null)
                 {
                     argument.Action.Invoke(argument.Target, parameter);
@@ -77,24 +83,24 @@ namespace Arguments
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Arguments" /> class with the specified source arguments and injected arguments.
+        /// Initializes a new instance of <see cref="ArgumentProcessor" /> class with the specified source arguments and injected arguments.
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <param name="arguments">Arguments to inject.</param>
         /// <returns>The arguments with the specified source arguments and injected arguments.</returns>
-        public static Arguments NewArguments(string[] source, IEnumerable<IArgument> arguments)
+        public static ArgumentProcessor NewArguments(string[] source, IEnumerable<IArgument> arguments)
         {
-            return new Arguments(source, arguments);
+            return new ArgumentProcessor(source, arguments);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Arguments" /> class with the specified source arguments.
+        /// Initializes a new instance of the <see cref="ArgumentProcessor" /> class with the specified source arguments.
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <returns>The arguments with the specified source arguments.</returns>
-        public static Arguments NewArguments(string[] source)
+        public static ArgumentProcessor NewArguments(string[] source)
         {
-            return new Arguments(source);
+            return new ArgumentProcessor(source);
         }
     }
 }

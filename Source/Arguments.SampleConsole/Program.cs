@@ -10,7 +10,7 @@ namespace Arguments.SampleConsole
     {
         internal static int Main(string[] args)
         {
-            // Parameters: /a:"some value" //d --stop -w --y
+            // Add this command-line parameter: /a:"some value" //d --stop -w --y
 
             Console.Title = "Sample Console";
             Console.CursorVisible = false;
@@ -22,7 +22,7 @@ namespace Arguments.SampleConsole
                     arguments = container.GetExportedValues<IArgument>();
 
             // Typical usage.
-            var processedArguments = Arguments.NewArguments(args, arguments)
+            var processedArguments = ArgumentProcessor.NewArguments(args, arguments)
                 .AddArgument("a")
                     .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
                 .AddArgument("d")
@@ -36,14 +36,14 @@ namespace Arguments.SampleConsole
             // We may want to return if any command-line parameters have been processed.
             if (processedArguments.Any())
             {
-                //return 1;
+                //return 0;
             }
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
 
-            return 1;
+            return 0;
         }
     }
 }
