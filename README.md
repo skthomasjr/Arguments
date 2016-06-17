@@ -46,4 +46,4 @@ public class SampleInjectedArgument : IArgument
   }
 }
 ```
-A sample project is included with the source.
+A more detailed sample project is included with the source.
