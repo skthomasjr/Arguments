@@ -1,4 +1,4 @@
-# CommandArguments
+# Arguments
 - [NuGet Package](https://www.nuget.org/packages/Arguments)
 - [Release Notes](https://github.com/skthomasjr/Arguments/releases)
 - [License](LICENSE.md)
