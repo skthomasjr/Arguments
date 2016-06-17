@@ -1,3 +1,3 @@
 #TODO
-- Argument chaining.
+- Elaborate argument chaining.
 - Unit testing.
