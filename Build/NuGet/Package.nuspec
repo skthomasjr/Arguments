@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>CommandArguments</id>
+    <id>Arguments.NET</id>
     <version>0.0.0</version>
     <authors>Scott Keith Thomas, Jr.</authors>
-    <description>CommandArguments is a library for interacting with command-line arguments.</description>
+    <description>Arguments.NET is a library for interacting with command-line arguments.</description>
     <tags>arguments batch cmd command-line commandline switch switches</tags>
-    <iconUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/Build/NuGet/Package.png</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/skthomasjr/CommandArguments/master/LICENSE.md</licenseUrl>
-    <projectUrl>https://github.com/skthomasjr/CommandArguments</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/skthomasjr/Arguments/master/Build/NuGet/Package.png</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/skthomasjr/Arguments/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/skthomasjr/Arguments</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
 </package>
