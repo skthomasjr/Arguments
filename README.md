@@ -7,7 +7,10 @@
 
 Arguments.NET is a library for interacting with command-line arguments passed into a .NET application. The library features a fluent interface and has provisions for inversion of control (IoC).
 
+The syntax is easy to read and manage and frees the implementer from plumbing issues such as case-sensative comparisons, argument separators, and argument processing flow and chaining.
+
 ```C#
+/// This code will process arguments "-a:5" or "/d".
 static int Main(string[] args)
 {
   var processedArguments = Arguments.NewArguments(args, arguments)
