@@ -4,3 +4,5 @@
 [![NuGet](https://img.shields.io/nuget/v/Arguments.NET.svg)](https://www.nuget.org/packages/Arguments.NET)
 [![License](https://img.shields.io/github/license/skthomasjr/Arguments.svg?maxAge=2592000)](LICENSE.md)
 [![Author](https://img.shields.io/badge/author-Scott%20K.%20Thomas%2C%20Jr.-blue.svg?maxAge=2592000)](https://www.linkedin.com/in/skthomasjr)
+
+Arguments.NET is a library for interacting with command-line arguments passed into a .NET application. The library features a fluent interface and has provisions for inversion of control (IoC).
