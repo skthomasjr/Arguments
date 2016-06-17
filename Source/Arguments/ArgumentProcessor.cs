@@ -88,7 +88,7 @@ namespace Arguments
         /// <param name="source">The source arguments.</param>
         /// <param name="arguments">Arguments to inject.</param>
         /// <returns>The arguments with the specified source arguments and injected arguments.</returns>
-        public static ArgumentProcessor NewArguments(string[] source, IEnumerable<IArgument> arguments)
+        public static ArgumentProcessor Initialize(string[] source, IEnumerable<IArgument> arguments)
         {
             return new ArgumentProcessor(source, arguments);
         }
@@ -98,7 +98,7 @@ namespace Arguments
         /// </summary>
         /// <param name="source">The source arguments.</param>
         /// <returns>The arguments with the specified source arguments.</returns>
-        public static ArgumentProcessor NewArguments(string[] source)
+        public static ArgumentProcessor Initialize(string[] source)
         {
             return new ArgumentProcessor(source);
         }

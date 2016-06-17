@@ -22,7 +22,7 @@ namespace Arguments.SampleConsole
                     arguments = container.GetExportedValues<IArgument>();
 
             // Typical usage.
-            var processedArguments = ArgumentProcessor.NewArguments(args, arguments)
+            var processedArguments = ArgumentProcessor.Initialize(args, arguments)
                 .AddArgument("a")
                     .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
                 .AddArgument("d")
