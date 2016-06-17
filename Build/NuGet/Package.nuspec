@@ -10,5 +10,9 @@
     <licenseUrl>https://raw.githubusercontent.com/skthomasjr/Arguments/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/skthomasjr/Arguments</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.ComponentModel.Composition" targetFramework="" />
+    </frameworkAssemblies>
   </metadata>
 </package>
