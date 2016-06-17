@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.Composition;
 
 namespace Arguments
 {
     /// <summary>
     /// An individual argument.
     /// </summary>
+    [PartNotDiscoverable]
     public class Argument : IArgument
     {
         /// <summary>
