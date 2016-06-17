@@ -13,7 +13,7 @@ namespace Arguments
         /// Initializes a new instance of the<see cref="Argument" /> class.
         /// </summary>
         /// <param name="arguments">The set of arguments from which the argument originated.</param>
-        public Argument(Arguments arguments)
+        public Argument(ArgumentProcessor arguments)
         {
             Arguments = arguments;
         }
@@ -26,7 +26,7 @@ namespace Arguments
         /// <summary>
         /// The set of arguments from which the argument originated.
         /// </summary>
-        public Arguments Arguments { get; set; }
+        public ArgumentProcessor Arguments { get; set; }
 
         /// <summary>
         /// The possible flags used to denote the argument.
