@@ -13,7 +13,7 @@ The syntax is easy to read and manage and frees the implementer from plumbing is
 /// This code will process arguments "-a:5" or "/d" or "--dee".
 static int Main(string[] args)
 {
-  var processedArguments = Arguments.NewArguments(args, arguments)
+  ArgumentManager.Initialize(args)
     .AddArgument("a")
       .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
     .AddArgument("d", "dee")
