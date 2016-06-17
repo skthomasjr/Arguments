@@ -6,3 +6,15 @@
 [![Author](https://img.shields.io/badge/author-Scott%20K.%20Thomas%2C%20Jr.-blue.svg?maxAge=2592000)](https://www.linkedin.com/in/skthomasjr)
 
 Arguments.NET is a library for interacting with command-line arguments passed into a .NET application. The library features a fluent interface and has provisions for inversion of control (IoC).
+
+```C#
+static int Main(string[] args)
+{
+  var processedArguments = Arguments.NewArguments(args, arguments)
+    .AddArgument("a")
+      .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
+    .AddArgument("d")
+      .WithAction(parameter => { Console.WriteLine("Argument 'd' processed"); })
+    .Process()
+}
+```
