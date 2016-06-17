@@ -10,13 +10,13 @@ Arguments.NET is a library for interacting with command-line arguments passed in
 The syntax is easy to read and manage and frees the implementer from plumbing issues such as case-sensative comparisons, argument separators, and argument processing flow and chaining.
 
 ```C#
-/// This code will process arguments "-a:5" or "/d".
+/// This code will process arguments "-a:5" or "/d" or "--dee".
 static int Main(string[] args)
 {
   var processedArguments = Arguments.NewArguments(args, arguments)
     .AddArgument("a")
       .WithAction(parameter => { Console.WriteLine($"Argument 'a' processed with value: {parameter}"); })
-    .AddArgument("d")
+    .AddArgument("d", "dee")
       .WithAction(parameter => { Console.WriteLine("Argument 'd' processed"); })
     .Process()
 }
