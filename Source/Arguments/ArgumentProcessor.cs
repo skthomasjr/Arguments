@@ -64,21 +64,8 @@ namespace Arguments
         /// <returns>The processed arguments.</returns>
         public IEnumerable<IArgument> Process()
         {
-            Arguments.AddRange(arguments);
-
-            foreach (var sourceArgument in Source)
-            {
-                var command = sourceArgument.Trim().TrimStart('/', '-');
-                var flag = command.Split(ParameterSeparator)[0];
-                var parameter = command.Split(ParameterSeparator).Length > 1 ? command.Split(ParameterSeparator)[1] : string.Empty;
-                var argument = Arguments.FirstOrDefault(f => f.Flags.Contains(flag));
-                if (argument != null)
-                {
-                    argument.Action.Invoke(argument.Target, parameter);
-                    processedArguments.Add(argument);
-                    if (argument.TerminateAfterExecution) break;
-                }
-            }
+            if (arguments?.Any() == true) Arguments.AddRange(arguments);
+            if (Source?.Any() == true) ProcessArguments();
             return processedArguments;
         }
 
@@ -101,6 +88,24 @@ namespace Arguments
         public static ArgumentProcessor Initialize(string[] source)
         {
             return new ArgumentProcessor(source);
+        }
+
+        private void ProcessArguments()
+        {
+            foreach (var sourceArgument in Source)
+            {
+                var command = sourceArgument.Trim().TrimStart('/', '-');
+                var flag = command.Split(ParameterSeparator)[0];
+                var parameter = command.Split(ParameterSeparator).Length > 1 ? command.Split(ParameterSeparator)[1] : string.Empty;
+                var argument = Arguments.FirstOrDefault(f => f.Flags.Contains(flag));
+                if (argument != null)
+                {
+                    argument.Action?.Invoke(argument.Target, parameter);
+                    argument.Value = parameter;
+                    processedArguments.Add(argument);
+                    if (argument.TerminateAfterExecution) break;
+                }
+            }
         }
     }
 }
