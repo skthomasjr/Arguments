@@ -19,6 +19,8 @@ namespace Arguments.SampleConsole
 
         public bool TerminateAfterExecution { get; set; } = false;
 
+        public string Value { get; set; }
+
         private void ProcessAction(int target, string parameter)
         {
             Console.WriteLine(target * 1000);

@@ -29,5 +29,10 @@ namespace Arguments
         /// Determines if additional arguments should be processed if this argument is encountered and executed.
         /// </summary>
         bool TerminateAfterExecution { get; set; }
+
+        /// <summary>
+        /// The value processed for this argument
+        /// </summary>
+        string Value { get; set; }
     }
 }

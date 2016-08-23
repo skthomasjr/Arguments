@@ -43,5 +43,8 @@ namespace Arguments
         /// Determines if additional arguments should be processed if this argument is encountered and executed.
         /// </summary>
         public bool TerminateAfterExecution { get; set; }
+
+        /// <inheritdoc />
+        public string Value { get; set; }
     }
 }
